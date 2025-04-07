@@ -20,14 +20,15 @@ export default function Products() {
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5 mt-10 lg:mx-[10rem] md:mx-[5rem] mx-auto justify-items-center">
         {products.map((product) => (
           <div key={product.id} className="shadow shadow-[#fceae1] rounded-2xl w-[20rem]">
+            <Link href={`/product/${product.id}`}>
             <img
               src={product.image}
               alt={product.name}
-              className="object-cover rounded-2xl w-[20rem] h-[25rem]"
+              className="object-cover rounded-2xl w-[20rem] h-[25rem] "
             />
             <h3 className={` ${inter.className} px-5`}>{product.name}</h3>
             <h4 className={`${inter.className} px-5 !font-medium py-2`}>Ksh {product.price}/-</h4>
-            <Link href={`/product/${product.id}`}>More</Link>
+            </Link>
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 
 
 
+
 export const metadata: Metadata = {
   title: "Manucha craft",
   description: "Manucha craft",
@@ -16,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <head>
         
+      </head>
+      <body
       >
         {children}
       </body>
