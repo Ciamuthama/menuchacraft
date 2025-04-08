@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import React from "react";
-import { Didact_Gothic,Domine } from "next/font/google";
+import { Domine } from "next/font/google";
 
-const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
+
 const arapey = Domine({
   weight: "400",
   subsets: ["latin"],
@@ -12,7 +12,7 @@ const arapey = Domine({
 
 export default function Footer() {
   return (
-    <div className="mt-14">
+    <div className="mt-14" id="footer">
       <div className="flex lg:mx-[15rem] mx-3 justify-between items-center">
         <Link href="#home" className="flex items-center">
           <img title="logo" src="/logo2.png" className="lg:h-[5rem] h-[3.5rem]"/>

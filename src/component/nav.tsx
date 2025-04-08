@@ -34,7 +34,7 @@ export default function Nav() {
         <ul className="lg:flex md:flex hidden justify-center items-center lg:gap-10 gap-5 mx-auto w-full text-nowrap">
           <li>
             <Link
-              href="#"
+              href="#home"
               className={`${arapey.className} lg:text-base text-[13px] hover:border-b-2 hover:border-foreground`}
             >
               Home
@@ -42,7 +42,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="#"
+              href="#books"
               className={`${arapey.className} lg:text-base text-[13px] hover:border-b-2 hover:border-foreground`}
             >
               Products
@@ -50,7 +50,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="#"
+              href="#footer"
               className={`${arapey.className} lg:text-base text-[13px] hover:border-b-2 hover:border-foreground`}
             >
               Contact
@@ -58,7 +58,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="#"
+              href="#howto"
               className={`${arapey.className} lg:text-base text-[13px] hover:border-b-2 hover:border-foreground`}
             >
               How to order
@@ -83,6 +83,7 @@ export default function Nav() {
       {open && (
         <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
           <button
+          title="menu"
             className="absolute top-5 right-5 text-foreground"
             onClick={handleMenuClose}
           >
