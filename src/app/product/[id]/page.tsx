@@ -42,17 +42,19 @@ export default function ProductDetail() {
     productId !== null
       ? productData.filter((item) => item.id !== productId)
       : [];
+
+    
   const nextSlide = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % currentProduct.image_details.length
+      (prevIndex) => (prevIndex + 1) % currentProduct!.image_details.length
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex(
       (prevIndex) =>
-        (prevIndex - 1 + currentProduct.image_details.length) %
-        currentProduct.image_details.length
+        (prevIndex - 1 + currentProduct!.image_details.length) %
+        currentProduct!.image_details.length
     );
   };
 
