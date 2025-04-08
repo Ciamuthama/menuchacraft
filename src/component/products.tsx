@@ -12,8 +12,8 @@ const arapey = Domine({
 const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
 export default function Products() {
   return (
-    <div className="mt-20 lg:mb-20 md:mb-15 mb-10">
-      <h2 className={`${arapey.className} text-center lg:text-4xl text-3xl`}>
+    <div className="mt-20 lg:mb-20 md:mb-15 mb-10 animate-fade-down animate-once animate-delay-[500ms]">
+      <h2 className={`${arapey.className} text-center lg:text-4xl text-3xl`} id="books">
         Pause. Rest. Reflect!
       </h2>
       <h4 className={`text-center text-lg ${inter.className}`}>Our Products</h4>

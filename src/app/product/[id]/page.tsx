@@ -3,29 +3,33 @@
 import { useParams } from "next/navigation";
 import product from "@/data/book";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Didact_Gothic } from "next/font/google";
 import Modal from "react-modal";
 import {ChevronRightIcon,ChevronLeftIcon} from '@heroicons/react/24/solid'
 
-
-
-
 const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
 
+
 export default function ProductDetail() {
+  const [countProduct, setCountProduct] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [delivery, setDelivery] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [productData, setProductData] = useState([]);
+  
+  useEffect(()=>{
+    setProductData( product)
+  },[])
   const { id } = useParams<{ id: string }>();
   const productId = id ? parseInt(id) : null;
-  const currentProduct =
-    productId !== null ? product.find((item) => item.id === productId) : null;
-  const otherProducts =
-    productId !== null ? product.filter((item) => item.id !== productId) : [];
-  const [countProduct, setCountProduct] = React.useState(1);
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [fullName, setFullName] = React.useState("");
-  const [delivery, setDelivery] = React.useState("");
-  const [currentIndex, setCurrentIndex] = React.useState(0);
 
+  const currentProduct =
+    productId !== null ? productData.find((item) => item.id === productId) : null;
+  const otherProducts =
+    productId !== null ? productData.filter((item) => item.id !== productId) : [];
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % currentProduct.image_details.length);
   };
@@ -34,8 +38,23 @@ export default function ProductDetail() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + currentProduct.image_details.length) % currentProduct.image_details.length);
   };
  
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); 
+
+    return () => clearTimeout(timeout); 
+  }, []);
+
+ 
+
+  if (isLoading) {
+    return <div className="absolute z-100 bg-background text-white top-0 bottom-0 w-screen loading"/>
+  }
+ 
   return (
-    <div className="mx-2 mt-20 relative">
+    <div className="mx-2 mt-20 relative animate-fade-down animate-once animate-delay-[1000ms] ">
       {currentProduct ? (
         <div className="flex lg:items-start lg:flex-row flex-col justify-center gap-5 lg:w-[50rem] md:w-[40rem] mx-auto">
         <div className="flex flex-row-reverse items-center justify-center mx-auto"> 

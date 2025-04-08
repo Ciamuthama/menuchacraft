@@ -14,12 +14,12 @@ const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
 
 export default function Hero() {
   return (
-    <div>
-      <div className="flex flex-col lg:gap-5 md:gap-3 gap-1.5">
-        <h4 className={`${inter.className} text-base text-center font-normal`}>
+    <div id="home" className="mt-5 animate-fade-down animate-once animate-delay-[500ms]">
+      <div className="flex flex-col lg:gap-5 md:gap-3 gap-1.5" id="home">
+        <h4 className={`${inter.className} text-base text-center font-normal`} >
           Christian stationery & gifts
         </h4>
-        <h2 className={`${arapey.className}  text-center lg:text-7xl md:text-5xl text-4xl`}>
+        <h2 className={`${arapey.className}  text-center lg:text-7xl md:text-5xl text-3xl`}>
           Menucha Crafts
         </h2>
         <p

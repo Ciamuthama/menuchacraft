@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
+@import "tailwindcss-animated";
 
 
 :root {
@@ -21,9 +22,31 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Didact_Gothic", sans-serif;
   overflow-x: hidden;
+}
+
+.footer{
+  background:url('/Manucha.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
+
+}
+
+.loading{
+  background-image: url("/logo2.png");
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position:center;
+  height: 100%;
 }
