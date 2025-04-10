@@ -5,8 +5,8 @@ import Footer from "@/component/footer";
 import Nav from "@/component/nav";
 
 export const metadata: Metadata = {
-  title: "Manucha craft",
-  description: "Manucha craft",
+  title: "Menucha craft",
+  description: "Menucha craft",
   icons: {
     icon: "/favicon.ico",
   },
