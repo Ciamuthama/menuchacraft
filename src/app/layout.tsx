@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     images: "/preview.png",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/preview.png",
   },
 };
 
