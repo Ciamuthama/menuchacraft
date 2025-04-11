@@ -1,7 +1,7 @@
+// next-sitemap.config.mjs
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+export default {
     siteUrl: 'https://menucha.co.ke',
-    generateRobotsTxt: true, // will generate robots.txt file
+    generateRobotsTxt: true,
     sitemapSize: 7000,
   }
-  
