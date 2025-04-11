@@ -6,10 +6,13 @@ import Nav from "@/component/nav";
 export const metadata: Metadata = {
   title: "Menucha craft",
   description: "Christian stationery & gifts",
+  keywords: ['Christian notebooks', 'faith journals', 'Christian gifts Kenya', 'Menucha', 'inspirational stationery','notebook', 'note','stationery', 'gift', 'journal'],
+  authors: [{ name: "Menucha craft" }],
+  metadataBase: new URL('https://menucha.co.ke'),
   openGraph: {
     title: "Menucha craft",
     description: "Christian stationery & gifts",
-    url: "https://menuchacraft.vercel.app",
+    url: "https://menucha.co.ke",
     siteName: "Menucha craft",
     images: [{ url: "/preview.png", width: 1200, height: 630 }],
     locale:"en_KE",
