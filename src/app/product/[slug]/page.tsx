@@ -1,13 +1,22 @@
-// app/product/[slug]/page.tsx
-import { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
+import ProductDetailClient  from "./ProductDetailClient";
 import product from "@/data/book";
-import ProductDetailClient from "./ProductDetailClient";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
   const slug = params.slug;
   const currentProduct = product.find(
     (item) =>
-      item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '') === slug
+      item.name
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w-]+/g, "") === slug
   );
 
   if (!currentProduct) {
@@ -48,7 +57,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const productData = product.map((item) => ({
     ...item,
-    slug: item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, ''),
+    slug: item.name
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, ""),
   }));
   const currentProduct = productData.find((item) => item.slug === slug) || null;
   const otherProducts = productData.filter((item) => item.slug !== slug);

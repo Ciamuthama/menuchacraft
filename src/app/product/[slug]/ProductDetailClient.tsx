@@ -181,6 +181,7 @@ export default function ProductDetailClient({ product, otherProducts }: {
             >
               <div className="relative mb-5">
                 <input
+                title="full name"
                   required
                   type="text"
                   value={fullName}
@@ -195,6 +196,7 @@ export default function ProductDetailClient({ product, otherProducts }: {
               </div>
               <div className="relative mt-5">
                 <input
+                title="delivery details"
                   required
                   type="text"
                   value={delivery}
