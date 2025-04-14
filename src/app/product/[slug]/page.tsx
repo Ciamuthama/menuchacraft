@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import ProductDetailClient  from "./ProductDetailClient";
 import product from "@/data/book";
 
-type Props = {
-  params: Promise<{ slug: string }>;
+type PageProps = {
+  params: {
+    slug: string;
+  };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const {slug} = await params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const {slug} =  params;
   const currentProduct = product.find(
     (item) =>
       item.name
