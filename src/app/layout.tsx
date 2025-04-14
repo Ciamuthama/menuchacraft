@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/component/footer";
 import Nav from "@/component/nav";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Menucha Craft | Christian Notebooks & Gifts in Kenya",
@@ -45,6 +46,7 @@ export default function RootLayout({
       <meta name="google-site-verification" content="mYluChv6NCL1xYc8mpDfWjJvPJUb_3PvXVdGPE8lxKA" />
       </head>
       <body>
+        <Analytics/>
         <Nav />
         {children}
         <Footer />
