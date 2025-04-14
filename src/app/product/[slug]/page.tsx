@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import ProductDetailClient  from "./ProductDetailClient";
+import ProductDetailClient from "./ProductDetailClient";
 import product from "@/data/book";
 
-type PageProps = {
+type Props = {
   params: {
     slug: string;
   };
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const {slug} =  params;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = params.slug;
   const currentProduct = product.find(
     (item) =>
       item.name
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: currentProduct.name,
       description: currentProduct.description,
       url: `https://menucha.co.ke/product/${slug}`,
-      type: "website",
+      type: "website", // ✅ "product" caused the OG error earlier
       siteName: "Menucha Crafts",
       images: [
         {
@@ -52,8 +52,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProductPage({ params }: PageProps) {
+export default function ProductPage({ params }: Props) {
   const slug = params.slug;
+
   const productData = product.map((item) => ({
     ...item,
     slug: item.name
@@ -61,6 +62,7 @@ export default function ProductPage({ params }: PageProps) {
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, ""),
   }));
+
   const currentProduct = productData.find((item) => item.slug === slug) || null;
   const otherProducts = productData.filter((item) => item.slug !== slug);
 
