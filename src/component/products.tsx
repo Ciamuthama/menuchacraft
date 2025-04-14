@@ -20,7 +20,7 @@ export default function Products() {
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-5 mt-10 lg:mx-[10rem] md:mx-[5rem] mx-auto justify-items-center">
         {products.map((product) => (
           <div key={product.id} className="shadow shadow-[#fceae1] rounded-2xl w-[20rem]">
-            <Link href={`/product/${product.id}`}>
+            <Link href={`/product/${product.slug}`} title={product.name}>
             <img
               src={product.image}
               alt={product.name}

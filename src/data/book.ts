@@ -2,6 +2,7 @@ const products = [
     {
         id: 1,
         name: "Men Sermon Notebook",
+        slug:"men-sermon-notebook",
         price: 900,
         description: "160-page notebook with sections to write the date, scripture reference, and notes for the day.",
         image: "/mens.jpg",
@@ -10,6 +11,7 @@ const products = [
     {
       id: 2,
       name: "Ladies Sermon Notebook",
+      slug:"ladies-sermon-notebook",
       price: 900,
       description: "160-page notebook with sections to write the date, scripture reference, and notes for the day.",
       image: "/ladies.jpg",
@@ -18,6 +20,7 @@ const products = [
     {
       id: 3,
       name: "Gratitude Journal",
+      slug:"gratitude-journal",
       price: 700,
       description: "A Million Little Miracles, A year-long weekly gratitude journal with sections for scriptures, gratitude, reflections, and prayers.",
       image: "/gratitude.jpg",
@@ -26,6 +29,7 @@ const products = [
     {
       id: 4,
       name: "Bloom Journal",
+      slug:"bloom-journal",
       price: 900,
       description: "A plain and simple journal for everyday use.",
       image: "/bloom.jpg",
