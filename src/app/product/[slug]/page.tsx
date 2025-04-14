@@ -3,11 +3,11 @@ import ProductDetailClient  from "./ProductDetailClient";
 import product from "@/data/book";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.slug;
+  const {slug} = await params;
   const currentProduct = product.find(
     (item) =>
       item.name
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: currentProduct.name,
       description: currentProduct.description,
       url: `https://menucha.co.ke/product/${slug}`,
-      type: "product",
+      type: "website",
       siteName: "Menucha Crafts",
       images: [
         {
