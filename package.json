@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-      "postbuild": "node scripts/sitemap-entries"
+      "postbuild": "node scripts/sitemap-entries.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
