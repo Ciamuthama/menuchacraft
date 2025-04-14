@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-      "postbuild": "node scripts/sitemap-entries.js"
+    "postbuild": "ts-node scripts/sitemap-entries.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -33,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
     "tailwindcss": "^4.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
