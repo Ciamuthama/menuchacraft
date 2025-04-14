@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import product from "@/data/book.ts";
+import product from "../scr/data/book.ts";
 
 const slugs = product.map(p =>
   p.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')
