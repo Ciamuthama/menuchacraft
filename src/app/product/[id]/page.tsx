@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { Didact_Gothic } from "next/font/google";
 import Modal from "react-modal";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
 
@@ -75,14 +76,16 @@ export default function ProductDetail() {
   return (
     <div className="mx-2 mt-20 relative animate-fade-down animate-once animate-delay-[1000ms] ">
       {currentProduct ? (
-        <div className="flex lg:items-start lg:flex-row flex-col justify-center gap-5 lg:w-[50rem] md:w-[40rem] mx-auto">
+        <div className="flex lg:items-start lg:flex-row flex-col justify-center relative gap-5 lg:w-[50rem] md:w-[40rem] mx-auto">
           <div className="flex flex-row-reverse items-center justify-center mx-auto">
             <div className="relative flex items-center">
-              <div className="flex justify-baseline items-start overflow-hidden mx-auto">
-                <img
+              <div className="flex justify-baseline items-start overflow-hidden mx-auto !relative w-full">
+                <Image
                   src={currentProduct.image_details[currentIndex]}
                   alt={`Slide ${currentIndex + 1}`}
-                  className="transition-transform duration-500 ease-in-out relative mask-b-from-20% mask-b-to-80%"
+                  fill
+                  priority={true}
+                  className="transition-transform duration-500 ease-in-out mask-b-from-20% !relative mask-b-to-80%"
                 />
               </div>
 
