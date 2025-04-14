@@ -3,12 +3,13 @@ import ProductDetailClient from "./ProductDetailClient";
 import product from "@/data/book";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const slug = params.slug;
   const currentProduct = product.find(
     (item) =>
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: currentProduct.name,
       description: currentProduct.description,
       url: `https://menucha.co.ke/product/${slug}`,
-      type: "website", // ✅ "product" caused the OG error earlier
+      type: "website", 
       siteName: "Menucha Crafts",
       images: [
         {
@@ -52,7 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProductPage({ params }: Props) {
+export default async function ProductPage(props: Props) {
+  const params = await props.params;
   const slug = params.slug;
 
   const productData = product.map((item) => ({
