@@ -48,7 +48,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: currentProduct.name,
       description: currentProduct.description,
-      images: currentProduct.image,
+      images: [currentProduct.image],
     },
   };
 }
