@@ -20,7 +20,7 @@ export default function Footer() {
         <div>
           <ul className="flex flex-col lg:gap-4 gap-2">
             <li>
-              <Link href="#home" className={`${arapey.className}`}>
+              <Link href="/" className={`${arapey.className}`}>
                 Home
               </Link>
             </li>
