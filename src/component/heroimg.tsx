@@ -10,11 +10,10 @@ const images = [
 ];
 
 export default function StackedCards() {
-const [imageData,setImageData] = useState([""])
-useEffect(()=>{
-    setImageData(images)
-},[])
-
+    const [imageData, setImageData] = useState([""]);
+    useEffect(() => {
+        setImageData(images);
+    }, []);
 
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -22,11 +21,10 @@ useEffect(()=>{
         offset: ["start end", "end start"],
     });
 
-   
     const moveLeft = useTransform(scrollYProgress, [0, 0], ["-60%", "-50%"]);
     const moveRight = useTransform(scrollYProgress, [0, 0], ["60%", "50%"]);
     const moveUp = useTransform(scrollYProgress, [0, 0], ["0%", "0%"]);
-    const moveDown = useTransform(scrollYProgress, [0, 0], ["5rem", "5rem"]); 
+    const moveDown = useTransform(scrollYProgress, [0, 0], ["5rem", "5rem"]);
 
     return (
         <div ref={ref} className="animate-fade-down animate-once animate-delay-[500ms] flex justify-center items-center min-h-screen mx-auto lg:-mt-0 md:-mt-[3rem] lg:-mb-0 md:-mb-5 -mb-[20rem]">
@@ -35,6 +33,13 @@ useEffect(()=>{
                     const isLeft = index === 2;
                     const isRight = index === 0;
                     const isCenter = index === 1;
+
+                   
+                    const altText = src
+                        .split("/")
+                        .pop()
+                        ?.replace(/_/g, " ") 
+                        .replace(".jpg", ""); 
 
                     return (
                         <motion.div
@@ -50,7 +55,7 @@ useEffect(()=>{
                         >
                             <Image
                                 src={src}
-                                alt={`Card ${index}`}
+                                alt={altText || ""}
                                 fill
                                 sizes="(max-width: 479px) 69vw, (max-width: 767px) 65vw, (max-width: 991px) 48vw, 47vw"
                                 className="object-cover rounded-2xl w-full h-full "

@@ -30,9 +30,10 @@ export const metadata: Metadata = {
     description: "Christian notebooks & gifts from Kenya",
     images: ["/preview.png"],
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // icons: {
+  //   icon: "/favicon.ico",
+  //   shortcut: "/favicon.ico",
+  // },
 }
 
 export default function RootLayout({
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
       <meta name="google-site-verification" content="mYluChv6NCL1xYc8mpDfWjJvPJUb_3PvXVdGPE8lxKA" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
       </head>
       <body>
         <Analytics/>
