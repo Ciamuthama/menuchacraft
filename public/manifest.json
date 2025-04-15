@@ -5,7 +5,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#fcd34d",
+    "theme_color": "#fff6f2",
     "icons": [
       {
         "src": "/web-app-manifest-192x192.png",
