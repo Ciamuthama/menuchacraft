@@ -1,9 +1,18 @@
-// next-sitemap.config.mjs
+import productData from './src/data/book.js';
+
+/** @type {import('next-sitemap').IConfig} */
 export default {
   siteUrl: 'https://menucha.co.ke',
   generateRobotsTxt: true,
-  sitemapSize: 7000,
-  additionalSitemaps: [
-    'https://menucha.co.ke/dynamic-sitemap.json'
-  ]
-}
+  outDir: './public',
+  additionalPaths: async () => {
+    const paths = productData.map((item) => {
+      const slug = item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+      return {
+        loc: `/product/${slug}`,
+        lastmod: new Date().toISOString(),
+      };
+    });
+    return paths;
+  },
+};
