@@ -8,6 +8,14 @@ type Props = {
   }>;
 };
 
+
+export async function generateStaticParams() {
+  return product.map((item) => ({
+    slug: item.name.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, ""),
+  }));
+}
+
+export const dynamicParams = false; 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const slug = params.slug;
