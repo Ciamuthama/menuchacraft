@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 const images = [
     "/A_Million_Little_Miracles_Gratitude_journal.jpg",
-    "/Sermon_Notes.jpg?v=2",
-    "/bloom_journal.jpg?v=2",
+    "/Sermon_Notes.jpg",
+    "/bloom_journal.jpg",
 ];
 
 export default function StackedCards() {
