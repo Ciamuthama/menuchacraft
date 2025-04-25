@@ -10,7 +10,7 @@ const arapey = Domine({
 });
 export default function Custom() {
   return (
-    <div className="lg:h-[30rem]  w-[90%] overflow-hidden rounded-xl mx-auto mt-20 relative animate-fade-down animate-once animate-delay-[500ms] ">
+    <div className="lg:h-[30rem] w-[90%] h-[15rem] overflow-hidden rounded-xl mx-auto mt-20 relative animate-fade-down animate-once animate-delay-[500ms] ">
       <div className="relative mx-auto w-full h-full">
         <CldImage
           title="custom"
@@ -18,6 +18,7 @@ export default function Custom() {
           alt="custom"
           fill
           quality={'auto'}
+          format="auto"
           className="mx-auto object-cover"
         />
       </div>
