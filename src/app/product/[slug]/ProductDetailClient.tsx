@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import { CldImage } from 'next-cloudinary';
 import Link from "next/link";
 import Modal from "react-modal";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
@@ -68,11 +68,12 @@ export default function ProductDetailClient({ product, otherProducts }: {
         <div className="flex flex-row-reverse items-center justify-center mx-auto">
           <div className="relative flex items-center">
             <div className="flex justify-baseline items-start overflow-hidden mx-auto !relative w-full">
-              <Image
+              <CldImage
                 src={product.image_details[currentIndex]}
                 alt={`Slide ${currentIndex + 1}`}
                 fill
-                priority={true}
+                quality={'auto'}
+                
                 className="transition-transform duration-500 ease-in-out mask-b-from-20% !relative mask-b-to-80%"
               />
             </div>
@@ -241,11 +242,14 @@ export default function ProductDetailClient({ product, otherProducts }: {
               key={item.id}
               className="flex flex-col items-center justify-center gap-2"
             >
-              <img
+              <div className="w-[20rem] object-center h-[20rem] relative">
+                <CldImage
                 src={item.image}
                 alt={item.name}
-                className="w-[20rem] object-cover"
-              />
+                fill
+                quality={'auto'}
+                className=""
+              /></div>
               <h3>{item.name}</h3>
               <p>KSh {item.price}.00</p>
             </Link>

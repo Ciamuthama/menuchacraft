@@ -1,12 +1,12 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { CldImage } from 'next-cloudinary';
 
 const images = [
-    "/A_Million_Little_Miracles_Gratitude_journal.jpg",
-    "/Sermon_Notes.jpg",
-    "/bloom_journal.jpg",
+    "https://res.cloudinary.com/dlmiqsnpe/image/upload/v1745515999/A_Million_Little_Miracles_Gratitude_journal.jpg",
+    "https://res.cloudinary.com/dlmiqsnpe/image/upload/v1745518453/Sermon_Notes.jpg",
+    "https://res.cloudinary.com/dlmiqsnpe/image/upload/v1745516051/bloom_journal.jpg",
 ];
 
 export default function StackedCards() {
@@ -27,7 +27,7 @@ export default function StackedCards() {
     const moveDown = useTransform(scrollYProgress, [0, 0], ["5rem", "5rem"]);
 
     return (
-        <div ref={ref} className="animate-fade-down animate-once animate-delay-[500ms] flex justify-center items-center min-h-screen mx-auto lg:-mt-0 md:-mt-[3rem] lg:-mb-0 md:-mb-5 -mb-[20rem]">
+        <div ref={ref} className="animate-fade-down animate-once animate-delay-[1000ms] flex justify-center items-center min-h-screen mx-auto lg:-mt-0 md:-mt-[3rem] lg:-mb-0 md:-mb-5 -mb-[20rem]">
             <div className="relative min-w-[25.5rem] h-[35rem] lg:mx-auto md:mx-auto mx-2 left-0 right-0">
                 {imageData.map((src, index) => {
                     const isLeft = index === 2;
@@ -53,10 +53,11 @@ export default function StackedCards() {
                             }}
                             className="absolute rounded-2xl overflow-hidden lg:w-full lg:h-full md:w-[80%] md:h-[80%] w-[40%] h-[40%] left-0 right-0 mx-auto"
                         >
-                            <Image
+                            <CldImage
                                 src={src}
                                 alt={altText || ""}
                                 fill
+                                quality={'auto'}
                                 sizes="(max-width: 479px) 69vw, (max-width: 767px) 65vw, (max-width: 991px) 48vw, 47vw"
                                 className="object-cover rounded-2xl w-full h-full "
                             />
