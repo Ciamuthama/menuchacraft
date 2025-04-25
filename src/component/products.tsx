@@ -28,6 +28,7 @@ export default function Products() {
               alt={product.name}
               fill
               quality={'auto'}
+               format="auto"
               className="object-cover rounded-2xl w-[20rem] h-[25rem] "
             />
             </div>

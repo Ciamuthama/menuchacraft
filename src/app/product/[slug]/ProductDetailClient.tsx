@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { CldImage } from 'next-cloudinary';
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 import Modal from "react-modal";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
@@ -8,7 +8,10 @@ import { Didact_Gothic } from "next/font/google";
 
 const inter = Didact_Gothic({ weight: "400", subsets: ["latin"] });
 
-export default function ProductDetailClient({ product, otherProducts }: {
+export default function ProductDetailClient({
+  product,
+  otherProducts,
+}: {
   product: {
     id: number;
     name: string;
@@ -72,8 +75,8 @@ export default function ProductDetailClient({ product, otherProducts }: {
                 src={product.image_details[currentIndex]}
                 alt={`Slide ${currentIndex + 1}`}
                 fill
-                quality={'auto'}
-                
+                quality={"auto"}
+                format="auto"
                 className="transition-transform duration-500 ease-in-out mask-b-from-20% !relative mask-b-to-80%"
               />
             </div>
@@ -182,7 +185,7 @@ export default function ProductDetailClient({ product, otherProducts }: {
             >
               <div className="relative mb-5">
                 <input
-                title="full name"
+                  title="full name"
                   required
                   type="text"
                   value={fullName}
@@ -197,7 +200,7 @@ export default function ProductDetailClient({ product, otherProducts }: {
               </div>
               <div className="relative mt-5">
                 <input
-                title="delivery details"
+                  title="delivery details"
                   required
                   type="text"
                   value={delivery}
@@ -244,12 +247,13 @@ export default function ProductDetailClient({ product, otherProducts }: {
             >
               <div className="w-[20rem] object-center h-[20rem] relative">
                 <CldImage
-                src={item.image}
-                alt={item.name}
-                fill
-                quality={'auto'}
-                className=""
-              /></div>
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  quality={"auto"}
+                  format="auto"
+                />
+              </div>
               <h3>{item.name}</h3>
               <p>KSh {item.price}.00</p>
             </Link>

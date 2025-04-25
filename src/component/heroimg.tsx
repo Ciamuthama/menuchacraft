@@ -58,6 +58,7 @@ export default function StackedCards() {
                                 alt={altText || ""}
                                 fill
                                 quality={'auto'}
+                                format="auto"
                                 sizes="(max-width: 479px) 69vw, (max-width: 767px) 65vw, (max-width: 991px) 48vw, 47vw"
                                 className="object-cover rounded-2xl w-full h-full "
                             />
