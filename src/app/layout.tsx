@@ -5,9 +5,9 @@ import Nav from "@/component/nav";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Menucha Craft | Christian Notebooks & Gifts in Kenya",
+  title: "Menucha Crafts | Christian Notebooks & Gifts in Kenya",
   description:
-    "Explore beautiful Christian stationery, sermon notebooks, and gifts crafted to inspire faith and gratitude. Menucha Craft — made in Kenya for believers everywhere.",
+    "Explore beautiful Christian stationery, sermon notebooks, and gifts crafted to inspire faith and gratitude. Menucha Crafts — made in Kenya for believers everywhere.",
   keywords: [
     "Christian notebooks",
     "faith journals",
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     "Christian shop Kenya",
     "faith gifts Kenya",
   ],
-  authors: [{ name: "Menucha Craft" }],
+  authors: [{ name: "Menucha Crafts" }],
   metadataBase: new URL("https://menucha.co.ke"),
   openGraph: {
-    title: "Menucha Craft | Christian Notebooks & Gifts",
+    title: "Menucha Crafts | Christian Notebooks & Gifts",
     description: "Christian stationery & gifts to uplift your faith journey.",
     url: "https://menucha.co.ke",
-    siteName: "Menucha Craft",
+    siteName: "Menucha Crafts",
     images: [
       {
         url: "/preview.png",
         width: 1200,
         height: 630,
-        alt: "Menucha Craft Preview",
+        alt: "Menucha Crafts Preview",
       },
     ],
     locale: "en_KE",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Menucha Craft",
+    title: "Menucha Crafts",
     description: "Christian notebooks & gifts from Kenya",
     images: ["/preview.png"],
   },
