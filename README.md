@@ -1,4 +1,4 @@
-# MenuchaCraft
+# Menucha Craft
 
 MenuchaCraft is a Next.js-based web application for showcasing and selling Christian stationery, sermon notebooks, and gifts. The project is designed to provide a seamless user experience with features like product browsing, ordering, and integration with WhatsApp for order completion.
 
